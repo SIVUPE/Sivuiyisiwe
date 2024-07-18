@@ -171,7 +171,6 @@ section .title::after{
 /* home section styling */
 .home{
     display: flex;
-    /* background: url("https://images.pexels.com/photos/4360449/pexels-photo-4360449.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2") no-repeat center; */
     background-color: black;
     height: 100vh;
     color: #fff;
@@ -203,6 +202,8 @@ section .title::after{
     color: crimson;
     font-weight: 500;
 }
+
+
 .classbox
 {
     position: relative;
@@ -259,7 +260,7 @@ section .title::after{
 
 /* about section styling */
 .about .title::after{
-    content: "who i am";
+    content: "who am i";
 }
 .about .about-content .left{
     width: 45%;
@@ -306,18 +307,18 @@ section .title::after{
 
 
 /* Projects section styling */
-.projects, .teams{
+.projects{
     color:#fff;
-    background: #111;
+    /* background: #111; */
 }
 .projects .title::before,
 .teams .title::before{
     background: #fff;
 }
 .projects .title::after,
-.teams .title::after{
+ .title::after{
     background: #111;
-    content: "what i provide";
+    content: "Projects Done";
 }
 
 .container
@@ -369,43 +370,68 @@ section .title::after{
     filter: blur(30px);
     transition: 0.5s;
 }
-.container .box:hover:before,
-.container .box:hover:after
-{
-    transform: skewX(0deg);
-    left: 20px;
-    width: calc(100% - 90px);
+.projects {
+    padding: 60px 0;
+    background: #111;
 }
-.container .box:nth-child(1):before,
-.container .box:nth-child(1):after
-{
-    background: linear-gradient(315deg,#ffbc00,#ff0058);
+
+.max-width {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
-.container .box:nth-child(2):before,
-.container .box:nth-child(2):after
-{
-    background: linear-gradient(315deg,#03a9f4,#ff0058);
+
+.title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 40px;
 }
-.container .box:nth-child(3):before,
-.container .box:nth-child(3):after
-{
-    background: linear-gradient(315deg,#4dff03,#00d0ff);
+
+.projects-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
-.container .box:nth-child(4):before,
-.container .box:nth-child(4):after
-{
-    background: linear-gradient(315deg,#eecda3 , #ef629f);
+
+.card {
+    flex-basis: 48%;
+    background: #fff;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 10px rgba(220, 20, 60, 0.1); /* Initial crimson box shadow */
 }
-.container .box:nth-child(5):before,
-.container .box:nth-child(5):after
-{
-    background: linear-gradient(-315deg,#c33764 ,#1d2671);
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 20px rgba(220, 20, 60, 0.3); /* Hover crimson box shadow */
 }
-.container .box:nth-child(6):before,
-.container .box:nth-child(6):after
-{
-    background: linear-gradient(315deg,#36d1dc ,#5b86e5);
+
+.box {
+    padding: 20px;
 }
+
+.box img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.text {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 20px 0 10px;
+}
+
+p {
+    color: #666;
+    line-height: 1.6;
+}
+
 .container .box .content
 {
     position: relative;
@@ -580,186 +606,234 @@ section .title::after{
 }
 
 /* education section styling */
-
-.education-main {
-  margin: 45px;
-  .education-wrap {
-    gap: 85px;
-    padding: 30px;
-    padding-right: 0;
-    position: relative;
-    @media (max-width: 767px) {
-      padding: 20px;
-    }
-    .eduction-iconwrap {
-      min-width: 130px;
-      width: 130px;
-      height: 130px;
-      position: relative;
-
-      &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: inherit;
-        height: inherit;
-        background-color: black;
-        transform: rotate(45deg);
-        border-radius: 10px;
-      }
-      &::after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        left: 90%;
-        border: 8px solid ;
-        width: 100%;
-        @media (max-width: 767px) {
-          transform: rotate(90deg);
-          left: 0;
-          top: unset;
-          bottom: -50px;
-        }
-      }
-      .education-icon {
-        color: white;
-        font-size: 45px;
-        transform: rotate(-45deg);
-        z-index: 2;
-      }
-    }
-    .eduction-detail {
-      background:white;
-      border-radius: 10px;
-      padding: 35px;
-      color: white;
-      .eduction-detail-head {
-        margin-bottom: 15px;
-        @media (max-width: 767px) {
-          gap: 10px;
-        }
-        .eduction-detail-heading {
-          font-size: 20px;
-          line-height: 30px;
-          margin-bottom: 0;
-          @media (max-width: 767px) {
-            text-align: center;
-          }
-        }
-        .eduction-detail-years {
-          font-size: 16px;
-          line-height: 26px;
-          font-weight: 400;
-          font-style: italic;
-          color: gray;
-        }
-      }
-      .eduction-detail-text {
-        font-size: 16px;
-        line-height: 26px;
-        font-weight: 400;
-        color: color-gray;
-        @media (max-width: 767px) {
-          text-align: center;
-        }
-      }
-      .eduction-detail-per {
-        font-size: 14px;
-        line-height: 24px;
-        font-weight: 400;
-        color: color-gray;
-        @media (max-width: 767px) {
-          text-align: center;
-        }
-      }
-    }
-  }
+.max-width {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
 }
 
-
-/* projects section styling */
-.teams .title::after{
-    content: "Projects Done";
-}
-.teams .carousel .card{
-    background: #222;
-    border-radius: 6px;
-    padding: 25px 35px;
+.title {
     text-align: center;
-    overflow: hidden;
-    transition: all 0.3s ease;
+    margin: 20px 0;
+    color: black;
 }
 
- .teams .carousel .card .box{
+.skills {
+    background-color:white;
+    color: #fff;
+    padding: 40px 0;
+}
+
+.education-main .education-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color:  #111;
+    border-radius: 8px;
+}
+
+.education-section .left {
+    max-width: 30%;
+}
+
+.education-section .right {
+    max-width: 65%;
+}
+.badges-section {
+    margin-top: 40px;
+}
+
+.badge-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.badge-card {
+    margin: 20px;
+}
+
+.badge-box {
+    background-color: #111;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.teams .carousel .card .text{
-    font-size: 25px;
-    font-weight: 500;
-    margin: 10px 0 7px 0;
-}
-.teams .carousel .card img{
-    height: 150px;
-    width: 150px;
-    object-fit: cover;
+.badge-box img {
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
-    border: 5px solid crimson;
-    transition: all 0.3s ease;
+    margin-bottom: 10px;
 }
-.teams .carousel .card:hover img{
-    border-color: #fff;
-}
-.owl-dots{
+
+.badge-box .text {
+    font-size: 14px;
     text-align: center;
-    margin-top: 20px;
+    color: #000;
 }
-.owl-dot{
-    height: 13px;
-    width: 13px;
-    margin: 0 5px;
-    outline: none!important;
-    border-radius: 50%;
-    border: 2px solid crimson!important;
-    transition: all 0.3s ease;
+
+
+/* Reviews section styling */
+.teams {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background-color: black; 
+    background-repeat: no-repeat;
 }
-.owl-dot.active{
-    width: 35px;
-    border-radius: 14px;
+
+.slider {
+    width: 100%;
+    overflow: hidden;
 }
-.owl-dot.active,
-.owl-dot:hover{
-    background: crimson!important;
+
+.slide-row {
+    display: flex;
+    transition: transform 0.5s ease;
 }
-.teams .carousel .card .box .project
-{
+
+.slide-col {
+    position: relative;
+    flex: 0 0 auto;
+    width: 800px;
+    height: 400px;
+}
+
+.hero {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+}
+
+.hero img {
+    height: 100%;
+    border-radius: 10px;
+    width: 320px;
+    object-fit: cover;
+}
+
+.content {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 520px;
+    height: 270px;
+    color: #4d4352;
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4.5px);
+    -webkit-backdrop-filter: blur(4.5px);
+    border-radius: 10px;
+    padding: 45px;
+    z-index: 2;
+}
+
+.content p {
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.content h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 35px;
+    color: #4d4352;
+}
+
+.indicator {
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+}
+
+.indicator .btn {
     display: inline-block;
-    color: crimson;
-    font-size: 18px;
-    font-weight: 500;
-    padding: 8px 16px;
-    margin-top: 20px;
-    border-radius: 6px;
-    border: 2px solid crimson;
-    transition: 0.3s ease-in-out;
+    height: 15px;
+    width: 15px;
+    margin: 4px;
+    border-radius: 15px;
+    background: #fff;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
 }
-.teams .carousel .card .box .project:hover{
-    color: white;
-    background: crimson;
+
+.btn.active {
+    width: 30px;
 }
+
+@media (max-width: 850px) {
+    .slide-col {
+        width: 500px;
+        height: 250px;
+    }
+
+    .hero img {
+        width: 200px;
+    }
+
+    .content {
+        width: 320px;
+        height: 200px;
+        padding: 20px;
+    }
+
+    .content p {
+        font-size: 0.9rem;
+    }
+
+    .content h2 {
+        font-size: 1.2rem;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 550px) {
+    .slide-col {
+        width: 300px;
+        height: 300px;
+    }
+
+    .hero {
+        top: 60%;
+        height: 100px;
+        z-index: 5;
+    }
+
+    .hero img {
+        width: 100px;
+    }
+
+    .content {
+        width: 300px;
+    }
+}
+
+
 /* contact section styling */
+.contact{
+    background-color: white;
+}
 input,textarea
 {
     caret-color: red;
 }
 .contact .title::after{
     content: "get in touch";
+    
 }
 .contact .contact-content .column{
     width: calc(50% - 30px);
