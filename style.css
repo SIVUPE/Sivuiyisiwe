@@ -309,7 +309,7 @@ section .title::after{
 /* Projects section styling */
 .projects{
     color:#fff;
-    /* background: #111; */
+    background: #111;
 }
 .projects .title::before,
 .teams .title::before{
