@@ -368,7 +368,7 @@ section .title::after{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 1000;
+    
     width: 100%;
     height: 100%;
     transition: 0.5s;
@@ -493,13 +493,17 @@ section .title::after{
     opacity: 0;
     transform: translateY(50px);
     transition: 0.5s;
+  
 }
 
 .container .card:hover .contentBx a {
     opacity: 1;
     transform: translateY(0px);
     transition-delay: 0.7s;
+    
+    
 }
+
 
 /* education section styling */
 .max-width {
